@@ -9,15 +9,19 @@ print "\nA simple word and char counter for text files\n"
 print "Please enter the path of the file. \neg : exmplefolder/example.txt\n>"
 path = raw_input("Press enter to input path: ")
  
-
+#opening file with read only mode
 text = open(path, 'r')
+#getting the content of the file
 data = text.read()
 
+# initializing variables
 lnum = lnum1 = 0
 chrn = word = 0
 nchr = 0
 print '\n\n'
 
+# printing the content in the console
+# and doing counts for each line
 for ln in string.split(data,'\n'):
     print ln
     
@@ -38,7 +42,7 @@ for ln in string.split(data,'\n'):
     for p in string.split(ln," "):
         if p != "":
             word = word + 1
-            
+# printing the results            
 print "\nLines (including empty lines) :",lnum1, \
       "%-30s :" %("\nLines (without empty lines)"),lnum, \
       "%-30s :" %("\nChars (including spaces)"),chrn, \
